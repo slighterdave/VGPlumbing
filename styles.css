@@ -229,13 +229,7 @@ h1 {
   background: #fff;
 }
 
-.ns-map-svg {
-  width: 100%;
-  display: block;
-}
-
-.map-wrap svg {
-  width: 100%;
+.map-wrap iframe {
   display: block;
 }
 
