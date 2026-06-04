@@ -205,6 +205,35 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+.catchment-card {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink);
+  border-radius: 16px;
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+.catchment-card h2 {
+  font-size: 1.45rem;
+}
+
+.catchment-card p {
+  margin: 0.75rem 0 1rem;
+  color: var(--muted);
+}
+
+.map-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #fff;
+}
+
+.map-wrap svg {
+  width: 100%;
+  display: block;
+}
+
 .quote-card h2 {
   font-size: 1.45rem;
 }
@@ -275,10 +304,56 @@ h1 {
   font-size: 0.95rem;
 }
 
+.testimonials {
+  padding: 3rem 0;
+}
+
+.carousel-window {
+  margin-top: 1.4rem;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-track {
+  display: flex;
+  width: 200%;
+  gap: 0.9rem;
+  animation: testimonial-slide 20s ease-in-out infinite;
+}
+
+.testimonial {
+  flex: 0 0 calc(100% / 6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(13, 40, 70, 0.08);
+  padding: 1rem;
+}
+
+.testimonial p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+}
+
 .services,
 .process,
 .coverage {
   padding: 3rem 0;
+}
+
+.emergency-bottom {
+  padding: 0 0 3rem;
+}
+
+.emergency-bottom .quote-card {
+  max-width: 460px;
+  margin-left: auto;
 }
 
 .section-heading h2 {
@@ -391,6 +466,29 @@ footer a {
   font-weight: 700;
 }
 
+@keyframes testimonial-slide {
+  0%,
+  16% {
+    transform: translateX(0);
+  }
+  20%,
+  36% {
+    transform: translateX(-16.666%);
+  }
+  40%,
+  56% {
+    transform: translateX(-33.333%);
+  }
+  60%,
+  76% {
+    transform: translateX(-50%);
+  }
+  80%,
+  100% {
+    transform: translateX(0);
+  }
+}
+
 @media (max-width: 1000px) {
   .proof-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -398,6 +496,10 @@ footer a {
 
   .services-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .testimonial {
+    flex-basis: calc(100% / 3);
   }
 }
 
@@ -436,5 +538,32 @@ footer a {
 
   .hero {
     padding-top: 2.4rem;
+  }
+
+  .carousel-track {
+    width: 600%;
+    animation-duration: 24s;
+  }
+
+  .testimonial {
+    flex-basis: calc(100% / 6);
+  }
+
+  .emergency-bottom .quote-card {
+    max-width: none;
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .testimonial {
+    flex-basis: auto;
   }
 }
