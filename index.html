@@ -50,15 +50,57 @@
         <aside class="catchment-card" aria-label="North Somerset catchment area map">
           <h2>North Somerset catchment area</h2>
           <p>We focus on rapid emergency response across North Somerset with local engineers on standby.</p>
-          <div class="map-wrap" role="img" aria-label="Map focused on North Somerset with highlighted area">
-            <svg viewBox="0 0 320 220" aria-hidden="true">
-              <rect x="0" y="0" width="320" height="220" rx="16" fill="#f3f9ff"/>
-              <path d="M90 48 121 40 151 47 177 62 209 66 239 87 243 114 229 142 196 160 167 184 142 193 110 188 84 165 72 136 66 109 75 83Z" fill="#dce9f8" stroke="#9ab7d4" stroke-width="3"/>
-              <path d="M102 112 113 102 131 101 143 109 146 125 137 139 121 142 107 134 100 122Z" fill="#e54c2e" stroke="#b33b23" stroke-width="2"/>
-              <circle cx="124" cy="122" r="4" fill="#fff"/>
-              <line x1="148" y1="116" x2="210" y2="88" stroke="#0b66c2" stroke-width="2"/>
-              <rect x="208" y="71" width="94" height="31" rx="8" fill="#0b66c2"/>
-              <text x="255" y="91" fill="#fff" text-anchor="middle" font-size="12" font-family="Arial, sans-serif">North Somerset</text>
+          <div class="map-wrap">
+            <svg class="ns-map-svg" viewBox="0 0 400 260" aria-label="Map of North Somerset district highlighted in blue" role="img">
+              <!-- sea / Bristol Channel background -->
+              <rect x="0" y="0" width="400" height="260" rx="12" fill="#cfe4f0"/>
+              <!-- land background (surrounding counties) -->
+              <rect x="0" y="0" width="400" height="260" rx="12" fill="#e9ede5" opacity="0.55"/>
+              <!-- North Somerset district fill -->
+              <polygon
+                points="182.6,54.4 258.1,56.9 287.1,66.6 314.2,80.4 332.9,94.2 336.8,113.8 326.5,126.7 318.7,141.4 305.2,155.2 280.6,171.4 243.2,186.9 211.0,204.8 176.8,217.8 131.6,220.2 85.8,211.3 52.3,198.2 27.7,175.5 21.9,152.8 25.8,125.9 36.1,105.6 51.6,90.2 72.3,79.6 100.0,69.9 135.5,59.3 163.9,53.6"
+                fill="#3b82f6" fill-opacity="0.22" stroke="#1d4ed8" stroke-width="2.5" stroke-linejoin="round"/>
+              <!-- Bristol Channel coast wash (west edge fade) -->
+              <linearGradient id="seaFade" x1="0" y1="0" x2="0.4" y2="0" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stop-color="#cfe4f0" stop-opacity="0.8"/>
+                <stop offset="100%" stop-color="#cfe4f0" stop-opacity="0"/>
+              </linearGradient>
+              <rect x="0" y="0" width="110" height="260" fill="url(#seaFade)"/>
+              <!-- "Bristol Channel" label -->
+              <text x="22" y="130" fill="#4a7ea8" font-size="8.5" font-family="Arial,sans-serif" font-style="italic" transform="rotate(-72,22,130)">Bristol Channel</text>
+
+              <!-- Town dots + labels -->
+              <!-- Weston-super-Mare -->
+              <circle cx="52.9" cy="173.9" r="4.5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+              <text x="58" y="172" fill="#1e293b" font-size="8.5" font-family="Arial,sans-serif" font-weight="600">Weston-super-Mare</text>
+              <!-- Portishead -->
+              <circle cx="192.3" cy="59.3" r="3.5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+              <text x="198" y="57" fill="#1e293b" font-size="8" font-family="Arial,sans-serif">Portishead</text>
+              <!-- Clevedon -->
+              <circle cx="129.7" cy="93.4" r="3.5" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+              <text x="135" y="91" fill="#1e293b" font-size="8" font-family="Arial,sans-serif">Clevedon</text>
+              <!-- Nailsea -->
+              <circle cx="191.0" cy="104.0" r="3" fill="#1d4ed8" stroke="#fff" stroke-width="1.5"/>
+              <text x="196" y="102" fill="#1e293b" font-size="8" font-family="Arial,sans-serif">Nailsea</text>
+
+              <!-- District label in centre -->
+              <text x="190" y="148" fill="#1d4ed8" font-size="12" font-family="Arial,sans-serif" font-weight="700" text-anchor="middle" opacity="0.85">North Somerset</text>
+
+              <!-- compass rose -->
+              <g transform="translate(368,22)">
+                <circle cx="0" cy="0" r="12" fill="#fff" fill-opacity="0.8" stroke="#9ca3af" stroke-width="1"/>
+                <polygon points="0,-10 2.5,-4 0,-6 -2.5,-4" fill="#1d4ed8"/>
+                <polygon points="0,10 2.5,4 0,6 -2.5,4" fill="#9ca3af"/>
+                <text x="0" y="-13" text-anchor="middle" font-size="7" fill="#374151" font-family="Arial,sans-serif" font-weight="700">N</text>
+              </g>
+
+              <!-- scale bar -->
+              <g transform="translate(20,240)">
+                <line x1="0" y1="0" x2="32" y2="0" stroke="#374151" stroke-width="1.5"/>
+                <line x1="0" y1="-3" x2="0" y2="3" stroke="#374151" stroke-width="1.5"/>
+                <line x1="32" y1="-3" x2="32" y2="3" stroke="#374151" stroke-width="1.5"/>
+                <text x="16" y="11" text-anchor="middle" font-size="7" fill="#374151" font-family="Arial,sans-serif">≈ 5 km</text>
+              </g>
             </svg>
           </div>
         </aside>
